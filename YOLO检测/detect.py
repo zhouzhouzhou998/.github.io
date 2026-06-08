@@ -1,17 +1,16 @@
 from ultralytics import YOLO
 
 if __name__ == '__main__':
-    # 加载一个预训练的模型，推荐用于迁移学习
-    # 可选: 'yolov8n.pt', 'yolov8s.pt', 'yolov8m.pt', 'yolov8l.pt', 'yolov8x.pt'
-    model = YOLO('yolov8n.pt') 
+    # 加载训练好的模型（优先使用训练产出的 best.pt）
+    model = YOLO('runs/detect/train/weights/best.pt')
 
-    # 开始训练模型
-    results = model.train(
-        data="datasets/bvm/insulator.yaml",
-        epochs=50,          # GPU训练，增加轮数以提升效果
-        imgsz=640,          # 标准分辨率
-        batch=16,
-        device="cuda",      # 使用 GPU 训练（需安装 CUDA 版 PyTorch）
-        verbose=True,       # 打印详细日志
+    # 对测试集图片进行检测
+    results = model.predict(
+        source="datasets/bvm/images/test",
+        imgsz=640,
+        device="cuda",
+        save=True,              # 保存标注后的图片
+        save_txt=True,          # 保存检测结果 txt
+        conf=0.5,               # 置信度阈值
     )
-    print("训练完成!")
+    print("检测完成! 结果保存在 runs/detect/predict/")

@@ -17,12 +17,14 @@ https://github.com/InsulatorData/InsulatorDataSet
 ```
 datasets/bvm/
 ├── images/
-│   ├── train/          # 16 张训练图片
-│   └── val/            # 7 张验证图片
+│   ├── train/          # 609 张训练图片
+│   ├── val/            # 134 张验证图片
+│   └── test/           # 128 张测试图片
 ├── labels/
-│   ├── train/          # 18 个训练标注
-│   └── val/            # 7 个验证标注
-└── insulator.yaml      # 数据集配置文件，使用相对路径
+│   ├── train/          # 611 个训练标注
+│   ├── val/            # 134 个验证标注
+│   └── test/           # 128 个测试标注
+└── insulator.yaml      # 数据集配置文件（2 类：defect, insulator）
 ```
 
 ## 使用说明
@@ -30,10 +32,20 @@ datasets/bvm/
 ### 训练模型
 
 ```bash
-python detect_one.py
+python practice.py
 ```
 
-使用 YOLOv8n 预训练模型进行迁移学习，默认在 CPU 上训练 10 个 epoch。
+使用 YOLOv8n 预训练模型进行迁移学习，GPU 训练 50 个 epoch。
+将模型best.pt从腾讯云中拷贝进result
+
+
+### 检测
+
+```bash
+python detect.py
+```
+
+加载训练好的权重对验证集图片进行检测，结果从腾讯云拷贝进result
 
 ### 环境要求
 
