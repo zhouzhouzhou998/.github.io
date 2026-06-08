@@ -36,8 +36,7 @@ python practice.py
 ```
 
 使用 YOLOv8n 预训练模型进行迁移学习，GPU 训练 50 个 epoch。
-将模型best.pt从腾讯云中拷贝进result
-
+需在腾讯云平台运行，训练完成后将 `best.pt` 从腾讯云中拷贝进 `result/best/`。
 
 ### 检测
 
@@ -45,7 +44,7 @@ python practice.py
 python detect.py
 ```
 
-加载训练好的权重对验证集图片进行检测，结果从腾讯云拷贝进result
+加载 `result/best/best.pt` 权重对测试集图片进行检测，将预测结果从腾讯云中拷贝进 `result/predict_results/`。
 
 ### 环境要求
 
