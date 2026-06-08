@@ -1,0 +1,5 @@
+path: D:\YOLO检测一张图片\datasets\bvm
+train: images/train
+val: images/val
+
+names: ['insulator']
