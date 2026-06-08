@@ -1,6 +1,8 @@
 # 数据分析
-
 此处并没有代码的部分，是在网课上学习数据分析和可视化工具的时候做的练习。
+网课为 哔哩哔哩 up主：戴戴戴师兄
+全网最良心的【数据分析自学课程】它来啦！必备的Excel/SQL/Tableau/Python|求职|简历面试|产品|大厂分析报告制作、戴师兄数据分析入门免费课
+
 
 ## 月度销售数据监控
 `月度销售数据监控.xlsx` 对源数据 Sheet 中的数据进行分析和可视化报表制作，包含 Excel 图表的月度销售监控看板。
@@ -10,7 +12,8 @@
 
 ## Tableau 可视化
 在 Tableau 中，对相同数据源制作可交互性图表：
-https://public.tableau.com/app/profile/.20381734/viz/2_17808986866470/1?publish=ye
+https://public.tableau.com/app/profile/.20381734/viz/2_17808986866470/1?publish=yes
 对应的打包工作簿文件为 `sales.twbx`，需要在 Tableau Desktop 或 Tableau Reader 中打开查看。
 
-其中，点击
+标题右侧，滑动日期条和选择门店名称可筛选图
+同时，点击任何数据（包括 表格单元格 和 饼图扇形区域 和 堆叠图）也可以进行筛选
