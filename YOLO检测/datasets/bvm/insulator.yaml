@@ -1,4 +1,4 @@
-path: D:\YOLO检测一张图片\datasets\bvm
+path: datasets/bvm
 train: images/train
 val: images/val
 
