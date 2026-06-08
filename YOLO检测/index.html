@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOLO 绝缘子检测 | 个人作品集</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #1a365d; --secondary: #2b6cb0; --accent: #3182ce;
+    --bg: #f7fafc; --card-bg: #fff; --text: #2d3748;
+    --text-light: #718096; --border: #e2e8f0;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white; padding: 50px 0 40px; text-align: center;
+  }
+  header h1 { font-size: 2.2rem; font-weight: 700; }
+  header p { margin-top: 10px; opacity: 0.85; }
+
+  .back-nav {
+    max-width: 1000px; margin: 0 auto; padding: 16px 24px 0;
+  }
+  .back-nav a {
+    color: var(--accent); text-decoration: none; font-size: 0.9rem;
+  }
+  .back-nav a:hover { text-decoration: underline; }
+
+  section { padding: 40px 0; }
+  section h2 {
+    font-size: 1.4rem; font-weight: 600; color: var(--primary);
+    margin-bottom: 24px; padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent); display: inline-block;
+  }
+
+  .card {
+    background: var(--card-bg); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid var(--border); margin-bottom: 28px;
+  }
+  .card-body { padding: 24px 28px; }
+
+  .info-grid {
+    display: grid; gap: 6px;
+  }
+  .info-grid .row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 8px;
+    padding: 4px 0; font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .info-grid .row .label { color: var(--secondary); font-weight: 500; }
+
+  .gallery {
+    padding: 0 28px 24px;
+    display: grid; gap: 16px;
+  }
+  .gallery-2 { grid-template-columns: 1fr 1fr; }
+  .gallery-1 { grid-template-columns: 1fr; }
+  .compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    padding: 0 28px 24px;
+  }
+  .gallery figure, .compare-grid figure {
+    border-radius: 8px; overflow: hidden; border: 1px solid var(--border);
+    background: #f8f9fa;
+  }
+  .gallery figure img, .compare-grid figure img {
+    width: 100%; display: block;
+  }
+  .gallery figure figcaption, .compare-grid figure figcaption {
+    padding: 6px 10px; font-size: 0.8rem; color: var(--text-light);
+    text-align: center; background: #fafafa;
+  }
+
+  footer { text-align: center; padding: 30px 0; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 1.6rem; }
+    .gallery-2, .compare-grid { grid-template-columns: 1fr; }
+    .info-grid .row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="back-nav"><a href="../">← 返回首页</a></nav>
+
+<header>
+  <div class="container">
+    <h1>YOLO 绝缘子检测</h1>
+    <p>大创项目 · YOLOv8 视觉检测</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <!-- 项目简介 -->
+    <h2>项目简介</h2>
+    <div class="card">
+      <div class="card-body">
+        <p>使用 YOLOv8 目标检测算法对电力绝缘子进行自动识别与定位。当前使用 CPLID 数据集练手，后续目标为高铁绝缘子检测。</p>
+      </div>
+      <div class="info-grid" style="padding: 0 28px 20px;">
+        <div class="row"><span class="label">数据集</span><span>CPLID · 871 张</span></div>
+        <div class="row"><span class="label">类别</span><span>defect（缺陷）、insulator（绝缘子）</span></div>
+        <div class="row"><span class="label">训练/验证/测试</span><span>609 / 134 / 128</span></div>
+        <div class="row"><span class="label">框架</span><span>YOLOv8n · GPU 50 epochs</span></div>
+        <div class="row"><span class="label">来源</span><span><a href="https://github.com/InsulatorData/InsulatorDataSet" target="_blank">InsulatorDataSet</a></span></div>
+      </div>
+    </div>
+
+    <!-- 数据集样本 -->
+    <h2>数据集样本</h2>
+    <div class="card">
+      <div class="gallery gallery-2">
+        <figure><img src="datasets/bvm/images/train/001.jpg" alt="样本 1" loading="lazy"><figcaption>训练集样本 1</figcaption></figure>
+        <figure><img src="datasets/bvm/images/train/002.jpg" alt="样本 2" loading="lazy"><figcaption>训练集样本 2</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- 代码 -->
+    <h2>训练与检测代码</h2>
+    <div class="card">
+      <div class="gallery gallery-2">
+        <figure><img src="../图片/practice代码截图.png" alt="practice.py" loading="lazy"><figcaption>训练脚本 practice.py</figcaption></figure>
+        <figure><img src="../图片/detect代码截图.png" alt="detect.py" loading="lazy"><figcaption>检测脚本 detect.py</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- 检测效果 -->
+    <h2>检测效果展示</h2>
+    <div class="card">
+      <div class="compare-grid">
+        <figure><img src="../图片/predict原图示例（1）.jpg" alt="原图 1" loading="lazy"><figcaption>原图</figcaption></figure>
+        <figure><img src="../图片/predict检测结果（1）.jpg" alt="结果 1" loading="lazy"><figcaption>检测结果</figcaption></figure>
+        <figure><img src="../图片/predict原图示例（2）.jpg" alt="原图 2" loading="lazy"><figcaption>原图</figcaption></figure>
+        <figure><img src="../图片/predict检测结果（2）.jpg" alt="结果 2" loading="lazy"><figcaption>检测结果</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- 腾讯云 -->
+    <h2>腾讯云训练环境</h2>
+    <div class="card">
+      <div class="gallery gallery-1">
+        <figure><img src="../图片/腾讯云示意图.png" alt="腾讯云" loading="lazy"><figcaption>腾讯云 GPU 平台</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container"><p><a href="../">返回首页</a> · zhouzhouzhou998</p></div>
+</footer>
+
+</body>
+</html>

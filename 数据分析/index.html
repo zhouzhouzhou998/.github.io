@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据分析 | 个人作品集</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #1a365d; --secondary: #2b6cb0; --accent: #3182ce;
+    --bg: #f7fafc; --card-bg: #fff; --text: #2d3748;
+    --text-light: #718096; --border: #e2e8f0;
+  }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    background: linear-gradient(135deg, #22543d, #276749);
+    color: white; padding: 50px 0 40px; text-align: center;
+  }
+  header h1 { font-size: 2.2rem; font-weight: 700; }
+  header p { margin-top: 10px; opacity: 0.85; }
+
+  .back-nav {
+    max-width: 1000px; margin: 0 auto; padding: 16px 24px 0;
+  }
+  .back-nav a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+  .back-nav a:hover { text-decoration: underline; }
+
+  section { padding: 40px 0; }
+  section h2 {
+    font-size: 1.4rem; font-weight: 600; color: #22543d;
+    margin-bottom: 24px; padding-bottom: 8px;
+    border-bottom: 3px solid #38a169; display: inline-block;
+  }
+
+  .card {
+    background: var(--card-bg); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid var(--border); margin-bottom: 28px;
+  }
+  .card-body { padding: 24px 28px; }
+
+  .info-grid { display: grid; gap: 6px; }
+  .info-grid .row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 8px;
+    padding: 4px 0; font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .info-grid .row .label { color: #276749; font-weight: 500; }
+
+  .gallery {
+    padding: 0 28px 24px;
+    display: grid; gap: 16px;
+  }
+  .gallery-2 { grid-template-columns: 1fr 1fr; }
+  .gallery-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .gallery figure {
+    border-radius: 8px; overflow: hidden; border: 1px solid var(--border);
+    background: #f8f9fa;
+  }
+  .gallery figure img { width: 100%; display: block; }
+  .gallery figure figcaption {
+    padding: 6px 10px; font-size: 0.8rem; color: var(--text-light);
+    text-align: center; background: #fafafa;
+  }
+
+  .project-link { padding: 0 28px 24px; }
+  .project-link a { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .project-link a:hover { text-decoration: underline; }
+
+  footer { text-align: center; padding: 30px 0; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 1.6rem; }
+    .gallery-2, .gallery-3 { grid-template-columns: 1fr; }
+    .info-grid .row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="back-nav"><a href="../">← 返回首页</a></nav>
+
+<header>
+  <div class="container">
+    <h1>数据分析</h1>
+    <p>网课练习 · Excel &amp; Tableau 可视化</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <!-- 项目简介 -->
+    <h2>项目简介</h2>
+    <div class="card">
+      <div class="card-body">
+        <p>网课学习数据分析和可视化工具时的练习作品，课程来自哔哩哔哩 up主"戴戴戴师兄"的《数据分析自学课程》。使用 Excel 和 Tableau 对月度销售数据进行清洗、分析和可视化。</p>
+      </div>
+      <div class="info-grid" style="padding: 0 28px 20px;">
+        <div class="row"><span class="label">工具</span><span>Excel · Tableau</span></div>
+        <div class="row"><span class="label">数据源</span><span>月度销售数据</span></div>
+        <div class="row"><span class="label">课程</span><span>戴戴戴师兄 · 数据分析自学课程</span></div>
+      </div>
+    </div>
+
+    <!-- Excel -->
+    <h2>Excel 销售监控看板</h2>
+    <div class="card">
+      <div class="gallery gallery-2">
+        <figure><img src="../图片/Excel筛选位置示意.png" alt="Excel 筛选位置" loading="lazy"><figcaption>筛选器位置示意</figcaption></figure>
+        <figure><img src="../图片/Excel多项筛选筛选.png" alt="Excel 多项筛选" loading="lazy"><figcaption>多项筛选功能</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- Tableau -->
+    <h2>Tableau 交互式图表</h2>
+    <div class="card">
+      <div class="gallery gallery-2">
+        <figure><img src="../图片/Tableau筛选.png" alt="Tableau 界面" loading="lazy"><figcaption>Tableau 交互式图表</figcaption></figure>
+        <figure><img src="../图片/扇形筛选（仅筛选店面）.png" alt="扇形筛选 店面" loading="lazy"><figcaption>扇形筛选（仅筛选店面）</figcaption></figure>
+      </div>
+      <div class="gallery gallery-1">
+        <figure><img src="../图片/扇形筛选（筛选店面和平台）.png" alt="扇形筛选 综合" loading="lazy"><figcaption>扇形筛选（店面和平台）</figcaption></figure>
+      </div>
+      <div class="project-link">
+        <a href="https://public.tableau.com/app/profile/.20381734/viz/2_17808986866470/1?publish=yes" target="_blank">在线交互图表 →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container"><p><a href="../">返回首页</a> · zhouzhouzhou998</p></div>
+</footer>
+
+</body>
+</html>
