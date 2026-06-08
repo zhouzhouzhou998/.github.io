@@ -1,8 +1,8 @@
 from ultralytics import YOLO
 
 if __name__ == '__main__':
-    # 加载训练好的模型（优先使用训练产出的 best.pt）
-    model = YOLO('runs/detect/train/weights/best.pt')
+    # 加载训练好的模型（从腾讯云训练后拷贝至 result/best/）
+    model = YOLO('result/best/best.pt')
 
     # 对测试集图片进行检测
     results = model.predict(
