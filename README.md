@@ -20,6 +20,7 @@
 
 在 Tableau 中，对相同数据源制作可交互性图表：
 https://public.tableau.com/app/profile/.20381734/viz/2_17808986866470/1?publish=yes
+但是打开的时间可能比较长
 对应的打包工作簿文件为 `sales.twbx`，但是本地需要下载 Tableau Desktop 或 Tableau Reader 中打开查看。
 
 标题右侧，滑动日期条和选择门店名称可实现筛选功能

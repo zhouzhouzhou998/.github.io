@@ -13,6 +13,7 @@
 ## Tableau 可视化
 在 Tableau 中，对相同数据源制作可交互性图表：
 https://public.tableau.com/app/profile/.20381734/viz/2_17808986866470/1?publish=yes
+但是打开所需的时间可能比较长
 对应的打包工作簿文件为 `sales.twbx`，需要在 Tableau Desktop 或 Tableau Reader 中打开查看。
 
 标题右侧，滑动日期条和选择门店名称可筛选图表
