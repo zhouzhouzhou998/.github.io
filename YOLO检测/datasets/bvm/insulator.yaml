@@ -1,7 +1,0 @@
-path: datasets/bvm
-train: images/train
-val: images/val
-test: images/test
-
-nc: 2
-names: ['defect', 'insulator']
